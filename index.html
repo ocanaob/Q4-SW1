@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kalu The Calculator Robot</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #808080; 
+        }
+        .container {
+            background-color: #808080; 
+            padding: 15px;
+            border-radius: 15px;
+            color: #ffffff; 
+            border: 2px dashed #000000; 
+            width: 40%; 
+            float: left; 
+        }
+        .robot-container {
+            float: left; 
+            margin-right: 20px; 
+        }
+        .robot-img {
+            max-width: 75%; 
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="robot-container">
+        <img src="https://img.pikbest.com/origin/09/41/62/18GpIkbEsTadq.png!w700wp" alt="Robot" class="robot-img">
+    </div>
+    
+    <div class="container">
+        <h1>Calculator</h1>
+        <p>Hi, my name is kalu. I'm here to give you a math challenge.</p>
+        
+        <div class="form-group">
+            <label for="num1">Value For X</label>
+            <input type="number" class="form-control" id="num1">
+        </div>
+        <div class="form-group">
+            <label for="num2">Value For Y</label>
+            <input type="number" class="form-control" id="num2">
+        </div>
+        
+        <button onclick="calculateProduct()">Product of X and Y</button>
+        <button onclick="calculateRemainder()">Remainder of X divided by Y</button>
+        <button onclick="calculatePower()">X raised to the power of Y</button>
+        
+        <div id="output"></div>
+    </div>
+
+    <script>
+        function calculateProduct() {
+            var num1 = parseFloat(document.getElementById('num1').value);
+            var num2 = parseFloat(document.getElementById('num2').value);
+            var result = num1 * num2;
+            document.getElementById('output').innerHTML = 'Product of X and Y: ' + result;
+        }
+
+        function calculateRemainder() {
+            var num1 = parseFloat(document.getElementById('num1').value);
+            var num2 = parseFloat(document.getElementById('num2').value);
+            var result = num1 % num2;
+            document.getElementById('output').innerHTML = 'Remainder of X divided by Y: ' + result;
+        }
+
+        function calculatePower() {
+            var num1 = parseFloat(document.getElementById('num1').value);
+            var num2 = parseFloat(document.getElementById('num2').value);
+            var result = Math.pow(num1, num2);
+            document.getElementById('output').innerHTML = 'X raised to the power of Y: ' + result;
+        }
+    </script>
+</body>
+</html>
